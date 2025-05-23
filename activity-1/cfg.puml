@@ -1,0 +1,22 @@
+@startuml
+start
+:Input year;
+if (year % 4 == 0?) then (yes)
+    if (year % 100 == 0?) then (yes)
+        if (year % 400 == 0?) then (yes)
+            :return True;
+            --> stop
+        else (no)
+            :return False;
+            --> stop
+        endif
+    else (no)
+        :return True;
+        --> stop
+    endif
+else (no)
+    :return False;
+    --> stop
+endif
+stop
+@enduml
